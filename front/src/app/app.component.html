@@ -1,0 +1,16 @@
+<!--<div (click)="onTableHeaderClick(i)" style="display: inline-table" *ngFor="let tab of tabs;index as i">-->
+<!--    <span style="padding:10px 10px 10px 10px">{{tab.name}}</span>-->
+<!--</div>-->
+<!--<app-tab [tab]="tabs[selectedTabIndex].tab"></app-tab>-->
+
+<!--<mat-tab-group *ngFor="let tab of tabs;index as i">-->
+<!--    <mat-tab label="{{tab.name}}"></mat-tab>-->
+<!--</mat-tab-group>-->
+
+<mat-tab-group>
+    <mat-tab  *ngFor="let tab of tabs; index as i"  [label]="tab.subsystem_id" >
+        <ng-template matTabContent>
+            <app-tab [tab]="tabs[i]"></app-tab>
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>
