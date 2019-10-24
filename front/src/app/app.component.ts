@@ -43,15 +43,17 @@ import {TabComponent} from "./tab/tab.component";
 //    ];
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
     public tabs: Tab[];
     private subscriptions: Subscription[] = [];
 
-    public tab:Tab;
+    selectedIndex=0;
+
+    public tab: Tab;
 
     constructor(private tabservice: TabServiceService) {
     }
@@ -68,9 +70,9 @@ export class AppComponent implements OnInit {
     }
 
 
-    public sendCommand(tab:Tab):void{
-        this.subscriptions.push(this.tabservice.saveCommand(tab).subscribe(()=>{
-                this.loadTabsValues()
+    public sendCommand(tab: Tab): void {
+        this.subscriptions.push(this.tabservice.saveCommand(tab).subscribe(() => {
+            this.loadTabsValues()
         }));
     }
 }

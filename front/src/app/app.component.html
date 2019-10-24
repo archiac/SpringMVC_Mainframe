@@ -7,10 +7,10 @@
 <!--    <mat-tab label="{{tab.name}}"></mat-tab>-->
 <!--</mat-tab-group>-->
 
-<mat-tab-group>
-    <mat-tab  *ngFor="let tab of tabs; index as i"  [label]="tab.subsystem_id" >
-        <ng-template matTabContent>
+<mat-tab-group >
+    <mat-tab *ngFor="let tab of tabs; index as i"  [label]="tab.subsystem_id" >
+        <div>
             <app-tab [tab]="tabs[i]"></app-tab>
-        </ng-template>
+        </div>
     </mat-tab>
 </mat-tab-group>

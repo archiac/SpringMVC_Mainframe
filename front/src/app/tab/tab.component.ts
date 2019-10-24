@@ -8,12 +8,11 @@ import {AppComponent} from "../app.component";
     templateUrl: './tab.component.html',
     styleUrls: ['./tab.component.css']
 })
-export class TabComponent{
+export class TabComponent {
     @Input() tab: Tab;
 
-    public edittab: Tab;
 
-    constructor(private app:AppComponent){
+    constructor(private app: AppComponent) {
 
     }
 
@@ -23,7 +22,6 @@ export class TabComponent{
     onEnterPress() {
         // this.tab.result += this.tab.command;
         // this.edittab =new Tab(this.tab.id,this.tab.subsystem_id,this.tab.command,this.tab.result,this.tab.timestamp);
-        // this.tab.result += this.tab.command;
         this.app.sendCommand(this.tab);
     }
 }
